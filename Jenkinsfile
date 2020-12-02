@@ -52,7 +52,6 @@ ls'''
           steps {
             unstash 'code'
             sh 'ci/unit-test-app.sh'
-            junit(checksName: '\'app/build/test-results/test/TEST-*.xml\'', testResults: 'junit')
           }
         }
 
