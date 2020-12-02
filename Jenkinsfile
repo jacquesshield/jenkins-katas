@@ -51,6 +51,7 @@ ls'''
           }
           steps {
             unstash 'code'
+            sh 'ci/unit-test-app.sh'
           }
         }
 
