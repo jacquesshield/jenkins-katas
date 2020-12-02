@@ -4,7 +4,7 @@ pipeline {
     stage('clone down') {
       agent {
         node {
-          label 'host'
+          label 'master/host'
         }
 
       }
@@ -36,6 +36,18 @@ pipeline {
             sh '''ls
 deleteDir()
 ls'''
+          }
+        }
+
+        stage('test app') {
+          agent {
+            docker {
+              image 'gradle:jdk11'
+            }
+
+          }
+          steps {
+            stash(name: 'code', includes: '.git')
           }
         }
 
