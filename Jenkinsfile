@@ -26,6 +26,12 @@ pipeline {
           }
         }
 
+        stage('Say Hello Again') {
+          steps {
+            sh 'echo "hello world"'
+          }
+        }
+
       }
     }
 
