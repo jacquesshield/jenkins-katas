@@ -52,6 +52,7 @@ ls'''
           steps {
             unstash 'code'
             sh 'ci/unit-test-app.sh'
+            sh 'junit \'app/build/test-results/test/TEST-*.xml\''
           }
         }
 
