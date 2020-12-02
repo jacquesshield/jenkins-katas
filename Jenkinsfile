@@ -32,13 +32,8 @@ pipeline {
             skipDefaultCheckout(true)
           }
           steps {
-<<<<<<< HEAD
-            stash(name: 'code', includes: '.git')
-            sh 'skipDefaultCheckout(true)'
-=======
             unstash 'code'
             skipDefaultCheckout true
->>>>>>> e60dc3ce489cf54fc4ffec4f0dccb212abd14adc
             sh 'ci/build-app.sh'
             archiveArtifacts 'app/build/libs/'
             sh '''ls
@@ -55,11 +50,7 @@ ls'''
 
           }
           steps {
-<<<<<<< HEAD
-            stash(name: 'code', includes: '.git')
-=======
             unstash 'code'
->>>>>>> e60dc3ce489cf54fc4ffec4f0dccb212abd14adc
           }
         }
 
