@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('Parallel execution') {
+    stage('Say Hello') {
       parallel {
         stage('Say Hello') {
           steps {
@@ -23,12 +23,6 @@ pipeline {
           }
           steps {
             sh 'ci/build-app.sh'
-          }
-        }
-
-        stage('Say Hello Again') {
-          steps {
-            sh 'echo "hello world"'
           }
         }
 
