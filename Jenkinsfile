@@ -4,7 +4,7 @@ pipeline {
     stage('clone down') {
       agent {
         node {
-          label 'master/host'
+          label 'master-label'
         }
 
       }
